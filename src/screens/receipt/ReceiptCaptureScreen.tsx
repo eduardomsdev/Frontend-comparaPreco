@@ -15,28 +15,36 @@ export function ReceiptCaptureScreen({ navigation }: Props) {
   const [photoUri, setPhotoUri] = useState<string | null>(null);
 
   async function handleTakePhoto() {
-    const permission = await ImagePicker.requestCameraPermissionsAsync();
-    if (!permission.granted) {
-      Alert.alert('Permissão necessária', 'Precisamos da câmera para fotografar a nota fiscal.');
-      return;
-    }
-    const result = await ImagePicker.launchCameraAsync({ quality: 0.7 });
-    if (!result.canceled && result.assets[0]) {
-      setPhotoUri(result.assets[0].uri);
-      setStep('preview');
+    try {
+      const permission = await ImagePicker.requestCameraPermissionsAsync();
+      if (!permission.granted) {
+        Alert.alert('Permissão necessária', 'Precisamos da câmera para fotografar a nota fiscal.');
+        return;
+      }
+      const result = await ImagePicker.launchCameraAsync({ quality: 0.7 });
+      if (!result.canceled && result.assets[0]) {
+        setPhotoUri(result.assets[0].uri);
+        setStep('preview');
+      }
+    } catch (err) {
+      Alert.alert('Não foi possível abrir a câmera', err instanceof Error ? err.message : 'Tente novamente.');
     }
   }
 
   async function handlePickFromGallery() {
-    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!permission.granted) {
-      Alert.alert('Permissão necessária', 'Precisamos de acesso às fotos para escolher a nota fiscal.');
-      return;
-    }
-    const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.7, mediaTypes: ['images'] });
-    if (!result.canceled && result.assets[0]) {
-      setPhotoUri(result.assets[0].uri);
-      setStep('preview');
+    try {
+      const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!permission.granted) {
+        Alert.alert('Permissão necessária', 'Precisamos de acesso às fotos para escolher a nota fiscal.');
+        return;
+      }
+      const result = await ImagePicker.launchImageLibraryAsync({ quality: 0.7, mediaTypes: ['images'] });
+      if (!result.canceled && result.assets[0]) {
+        setPhotoUri(result.assets[0].uri);
+        setStep('preview');
+      }
+    } catch (err) {
+      Alert.alert('Não foi possível abrir a galeria', err instanceof Error ? err.message : 'Tente novamente.');
     }
   }
 

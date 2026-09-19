@@ -9,6 +9,7 @@ export type HomeStackParamList = {
   ProductDetail: { productId: number };
   ShoppingList: undefined;
   ShoppingListComparison: undefined;
+  NearbyEstablishments: undefined;
   ReceiptCapture: undefined;
   NewPurchase: undefined;
   PurchaseHistory: undefined;

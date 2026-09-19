@@ -65,8 +65,8 @@ export function HomeScreen({ navigation }: Props) {
           <ActionCard
             icon="📍"
             title="Estabelecimentos próximos"
-            subtitle="Em breve"
-            disabled
+            subtitle="Por distância"
+            onPress={() => navigation.navigate('NearbyEstablishments')}
           />
           <ActionCard
             icon="📖"

@@ -29,6 +29,12 @@
           "cameraPermission": "O PreçoCerto usa a câmera para fotografar notas fiscais.",
           "photosPermission": "O PreçoCerto acessa suas fotos para anexar a imagem de uma nota fiscal."
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "O PreçoCerto usa sua localização para mostrar estabelecimentos próximos."
+        }
       ]
     ]
   }

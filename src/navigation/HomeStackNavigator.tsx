@@ -6,6 +6,7 @@ import { ProductSearchScreen } from '../screens/products/ProductSearchScreen';
 import { ProductDetailScreen } from '../screens/products/ProductDetailScreen';
 import { ShoppingListScreen } from '../screens/shoppingList/ShoppingListScreen';
 import { ShoppingListComparisonScreen } from '../screens/shoppingList/ShoppingListComparisonScreen';
+import { NearbyEstablishmentsScreen } from '../screens/establishments/NearbyEstablishmentsScreen';
 import { ReceiptCaptureScreen } from '../screens/receipt/ReceiptCaptureScreen';
 import { NewPurchaseScreen } from '../screens/purchases/NewPurchaseScreen';
 import { PurchaseHistoryScreen } from '../screens/purchases/PurchaseHistoryScreen';
@@ -22,6 +23,7 @@ export function HomeStackNavigator() {
       <Stack.Screen name="ProductDetail" component={ProductDetailScreen} options={{ title: 'Produto' }} />
       <Stack.Screen name="ShoppingList" component={ShoppingListScreen} options={{ headerShown: false }} />
       <Stack.Screen name="ShoppingListComparison" component={ShoppingListComparisonScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="NearbyEstablishments" component={NearbyEstablishmentsScreen} options={{ headerShown: false }} />
       <Stack.Screen name="ReceiptCapture" component={ReceiptCaptureScreen} options={{ title: 'Nota fiscal' }} />
       <Stack.Screen name="NewPurchase" component={NewPurchaseScreen} options={{ title: 'Registrar compra' }} />
       <Stack.Screen name="PurchaseHistory" component={PurchaseHistoryScreen} options={{ headerShown: false }} />
